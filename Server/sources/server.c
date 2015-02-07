@@ -95,16 +95,12 @@ void always_on (int sock)
 		mod_str[j]=buffer[i];
 	mod_str[j]='\0';
 	mod = strtol(mod_str,&endptr,10);	
-	/*****************************************/
 
 	/*************************************
 	Encryption function goes here   
 	**************************************/
-	
 	file_name = encrypt(pub_expo,mod,requested_file); 
 	// 'file_name' contains encrypted data
-	printf("\nfilename after bob:%s\n",file_name);
-	/**************************************/
 
    fd=open(file_name,O_RDONLY);
    if(fd<0)
